@@ -1,0 +1,81 @@
+body
+{
+	background-image :url('form_pic.jpg');
+}
+
+input[type=text], select{
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: 50%;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+	
+	
+	
+	
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+	width:50%;
+	text-align:left;
+	
+}
+
+#dvPreview
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+    min-height: 10px;
+    min-width: 20px;
+    
+	
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+#image{
+	
+	width:40px;
+	height:40px;
+	
+	position: absolute;
+    right: 500px;
+	top:1050px;
+
+}
+.subject
+{
+
+	margin:left;
+}
