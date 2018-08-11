@@ -1,0 +1,103 @@
+<html>
+<head>
+
+<meta name="google-signin-client_id" content="255249138366-fltc38naerso2ium3l7t9ccbt9opmhhq.apps.googleusercontent.com">
+<title> SignUp</title>
+</head>
+
+<link rel = "stylesheet" type = "text/css" href = "SignUp.css">
+<body onload ="myFunction()">
+<div id="parallax" style="position:relative;">
+<div id="godown" style="position:absolute; bottom:20px; left:700px;">
+<a href ="#top" style="color:black; top:89px;">
+<center>GO DOWN </center></a>
+</div>
+</div>
+<div id="snackbar">Scroll Below To Sign Up !</div>
+<script>
+function myFunction()
+{
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+
+<h1 style="color:black;"><center>Signup</center></h1>
+
+<form method = "post" action = "SignUpValidations_LoginHTML.php"  style="border:1px solid #ccc" name = "form1">
+	<div id = "container">
+			<label><b>First-name</b></label>
+			<input type = "text" placeholder = "Enter Name" name = "fname" required>
+			<br>
+			
+			<label><b>Last-name</b></label>
+			<input type = "text" placeholder = "Enter Last-name" name = "lname" required>
+			<br>
+			
+			
+			<label><b>Email</b></label>
+			<input type = "text" placeholder = "Enter Email" name = "emname" required>
+			<br>
+		
+			<label><b>Password</b></label>
+			<input type = "password" placeholder = "Enter Password" name = "pass" maxlength="20" id = "password"required>
+			<br>
+		
+			<label><b>Repeat Password</b></label>
+			<input type = "password" placeholder = "Repeat Password" name = "rep_pass" id = "repeat_pass" maxlength = "20" required>
+			<br>
+		
+			<input type = "checkbox" checked = "checked">Remember Me
+			<br>
+	
+		<div id = "clearfix">
+		<center>
+			<button type = "reset"	class = "cancelbtn" name="cancelbttn" >Reset </button>
+			 
+			<button type = "Submit" class = "signupbtn" name="signupbttn" onclick = "myFunction()" >SignUp</button>
+		</center>	
+		</div>
+	</div>
+		
+		
+</div>
+<div class="container" style="background-color:#f1f1f1">   
+    <span class = "already"><b>Already <a href="SignUpValidations_LoginHTML.php">Registered?
+ 
+	</a></b></span>
+	
+  
+  &nbsp;&nbsp; <b><h3>Or</b> <bt><script src="https://apis.google.com/js/platform.js" async defer></script>
+<br>
+<br>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+</div>
+<br><br>
+
+<script>
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  
+  var id_token = googleUser.getAuthResponse().id_token;
+	 if(id_token!="")
+	{
+		window.location ='Signup2.php';
+	} 
+	var xhr = new XMLHttpRequest();
+xhr.open('POST', 'http://localhost/Project/signup1.php');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.onload = function() {
+  console.log('Signed in as: ' + xhr.responseText);
+};
+xhr.send('idtoken=' + id_token);
+}
+</script>
+<h2 id ="top"></h2>
+</head>
+</html>	
