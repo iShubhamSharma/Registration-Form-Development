@@ -16,3 +16,7 @@ The objective of this repository is to build a login/sign, and registration page
 ## Contact Form
 
 ![](images/contactForm.JPG)
+
+## Code Requirements
+
+* Install Xampp to run the project files
