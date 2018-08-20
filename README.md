@@ -1,5 +1,5 @@
 # Registration-Form-Development
-The objective of this repository is to build a login/sign, and registration page.
+The objective of this repository is to build a login/sign up, and registration page.
 
 ## Sign Up Page
 
